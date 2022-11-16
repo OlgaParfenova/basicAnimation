@@ -1,16 +1,30 @@
 const $btn = document.querySelector('.btn');
-let timerId,
-    i = 0;
 
-$btn.addEventListener('click', () => {
-    timerId = setInterval(logger, 2000);
-});
+function myAnimation () {
+    const $element = document.querySelector('.box');
+    let position = 0;
 
-function logger () {
-    if (i === 3) {
-        clearInterval(timerId);
+    const id = setInterval(frame, 10);
+
+    function frame () {
+        if (position === 300) {
+            clearInterval(id);
+        } else {
+            position++;
+            $element.style.top = position + "px";
+            $element.style.left = position + 'px';
+        }
     }
-    console.log('Hello');
-    i++;
 }
+
+$btn.addEventListener('click', myAnimation);
+
+//
+// function logger () {
+//     if (i === 3) {
+//         clearInterval(timerId);
+//     }
+//     console.log('Hello');
+//     i++;
+// }
 
