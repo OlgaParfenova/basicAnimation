@@ -18,3 +18,7 @@ button {
   background-color: yellow;
   border: none;
 }
+
+button:hover {
+  cursor: pointer;
+}
